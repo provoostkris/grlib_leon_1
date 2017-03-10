@@ -1,0 +1,71 @@
+
+#device options
+set_option -technology Virtex
+set_option -part XCV300
+set_option -package PQ240
+set_option -speed_grade -4
+
+#add_file options
+add_file -vhdl -lib work "../leon/amba.vhd"
+add_file -vhdl -lib work "../leon/target.vhd"
+add_file -vhdl -lib work "../leon/device.vhd"
+add_file -vhdl -lib work "../leon/config.vhd"
+add_file -vhdl -lib work "../leon/sparcv8.vhd"
+add_file -vhdl -lib work "../leon/iface.vhd"
+add_file -vhdl -lib work "../leon/macro.vhd"
+add_file -vhdl -lib work "../leon/ambacomp.vhd"
+add_file -vhdl -lib work "../leon/bprom.vhd"
+add_file -vhdl -lib work "../leon/tech_generic.vhd"
+add_file -vhdl -lib work "../leon/tech_synplify.vhd"
+add_file -vhdl -lib work "../leon/tech_leonardo.vhd"
+add_file -vhdl -lib work "../leon/tech_atc35.vhd"
+add_file -vhdl -lib work "../leon/tech_virtex.vhd"
+add_file -vhdl -lib work "../leon/ramlib.vhd"
+add_file -vhdl -lib work "../leon/cachemem.vhd"
+add_file -vhdl -lib work "../leon/icache.vhd"
+add_file -vhdl -lib work "../leon/dcache.vhd"
+add_file -vhdl -lib work "../leon/acache.vhd"
+add_file -vhdl -lib work "../leon/cache.vhd"
+add_file -vhdl -lib work "../leon/rstgen.vhd"
+add_file -vhdl -lib work "../leon/clkgen.vhd"
+add_file -vhdl -lib work "../leon/fpulib.vhd"
+add_file -vhdl -lib work "../leon/iu.vhd"
+add_file -vhdl -lib work "../leon/regfile.vhd"
+add_file -vhdl -lib work "../leon/proc.vhd"
+add_file -vhdl -lib work "../leon/lconf.vhd"
+add_file -vhdl -lib work "../leon/irqctrl.vhd"
+add_file -vhdl -lib work "../leon/mctrl.vhd"
+add_file -vhdl -lib work "../leon/ioport.vhd"
+add_file -vhdl -lib work "../leon/timers.vhd"
+add_file -vhdl -lib work "../leon/uart.vhd"
+add_file -vhdl -lib work "../leon/apbmst.vhd"
+add_file -vhdl -lib work "../leon/wprot.vhd"
+add_file -vhdl -lib work "../leon/ahbstat.vhd"
+add_file -vhdl -lib work "../leon/ahbarb.vhd"
+add_file -vhdl -lib work "../leon/mcore.vhd"
+add_file -vhdl -lib work "../leon/padlib.vhd"
+add_file -vhdl -lib work "../leon/leon.vhd"
+
+#compilation/mapping options
+set_option -default_enum_encoding onehot
+set_option -symbolic_fsm_compiler false
+set_option -resource_sharing false
+
+#map options
+set_option -frequency 33.000
+set_option -fanout_limit 100
+set_option -maxfan_hard false
+set_option -disable_io_insertion false
+
+#simulation options
+set_option -write_verilog false
+set_option -write_vhdl false
+
+#automatic place and route (vendor) options
+set_option -write_apr_constraint false
+
+#MTI Cross Probe options
+set_option -mti_root ""
+
+#set result format/file last
+project -result_file "leon.edf"

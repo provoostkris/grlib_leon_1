@@ -1,0 +1,67 @@
+
+------------------------------------------------------------------------
+
+LEON-1 VHDL model version 2.2c, released on 1 November 2000. (J.Gaisler)
+
+Additions:
+	* Flattened hierarchy to simplify addition of AMBA modules
+	* Number of AHB and APB slaves is configured automatically from 
+	  configuration table
+	* Wacthdog can be supressed in configuration record
+Bug fixes:
+	* boot-prom (bprom.c) failed to set proper stack pointer
+	* Documentation
+------------------------------------------------------------------------
+
+LEON-1 VHDL model version 2.2b, released on 13 October 2000. (J.Gaisler)
+
+Additions:
+	* 16-bit memory interface + read-modify-write option
+	* boot-prom with memory auto-configuration
+Bug fixes:
+	* Documentation
+------------------------------------------------------------------------
+
+LEON-1 VHDL model version 2.2a, released on 6 October 2000. (J.Gaisler)
+
+Additions:
+	* FPU/Co-processor interface added (iface.vhd, iu.vhd, cp.vhd)
+	* AMBA AHB/APB buses
+	* boot-prom
+	* Synopsys VSS/FC2 support
+	* Leonardo 1999.x support
+	* Xilinx Virtex ram generators
+Bug fixes:
+	* wong dependency check in MULSCC when icchold enabled
+        * UART receiver used wrong irq enable bit (uart.vhd)
+	* DPRAM168x34 & DPRAM168x39 had only 136 regs (ramlib.vhd)
+	* sregsin missing in decode process sensitivity list (iu.vhd)
+	* Wrong data dependency check when FPU is enabled (iu.vhd)
+	* STF instruction did not check for address alignment error (iu.vhd)
+------------------------------------------------------------------------
+
+LEON-1 VHDL model version 2.1, released on 11 May 2000. (J.Gaisler)
+
+	* Improved timing for FPGA implementations
+	* Added support for bootable cache (Xilinx only)
+	* Added support for ATC35 0.35 cmos process
+	* Removed memory EDAC and cache parity
+	* Added PCI signals and PCI initial support (not completed)
+
+------------------------------------------------------------------------
+
+LEON-1 VHDL model version 2.0, released on 2 February 2000. (J.Gaisler)
+------------------------------------------------------------------------
+
+LEON-1 VHDL model version 1.1, released on 14 October 1999. (J.Gaisler)
+
+	* Added support for Xilinx Virtex FPGA
+	* Added missing contraints file for synplify
+	* Improved simulation models of target specific ram blocks
+	* Fixed false write hit during byte/halfword write (dcache)
+	* Fixed false read hit during flush opration (icache)
+	* Optimised data parity generation (icache, dcache, mctrl, macro)
+------------------------------------------------------------------------
+
+LEON-1 VHDL model version 1.0, released on 7 October 1999. (J.Gaisler)
+------------------------------------------------------------------------

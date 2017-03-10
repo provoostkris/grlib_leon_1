@@ -1,0 +1,70 @@
+/* List paths to your sources, target, and link libraries below. */
+/* Each path should be separated by spaces.                      */
+/* search_path = {/u/release/1998.02/libraries/syn .} */
+
+/* Specify your target and link libraries here, separated by spaces */
+/* link_library = target_library = {class.db} */
+
+bus_naming_style = "%s<%d>"
+bus_dimension_separator_style = "><"
+bus_inference_style = "%s<%d>"
+hdlin_translate_off_skip_text = "true"
+
+sh "rm -rf WORK; mkdir WORK"
+define_design_lib WORK -path WORK
+analyze -f VHDL -library WORK ../leon/amba.vhd
+analyze -f VHDL -library WORK ../leon/target.vhd
+analyze -f VHDL -library WORK ../leon/device.vhd
+analyze -f VHDL -library WORK ../leon/config.vhd
+analyze -f VHDL -library WORK ../leon/sparcv8.vhd
+analyze -f VHDL -library WORK ../leon/iface.vhd
+analyze -f VHDL -library WORK ../leon/macro.vhd
+analyze -f VHDL -library WORK ../leon/bprom.vhd
+analyze -f VHDL -library WORK ../leon/tech_generic.vhd
+analyze -f VHDL -library WORK ../leon/tech_virtex.vhd
+analyze -f VHDL -library WORK ../leon/tech_leonardo.vhd
+analyze -f VHDL -library WORK ../leon/tech_synplify.vhd
+analyze -f VHDL -library WORK ../leon/tech_atc35.vhd
+analyze -f VHDL -library WORK ../leon/ramlib.vhd
+analyze -f VHDL -library WORK ../leon/cachemem.vhd
+analyze -f VHDL -library WORK ../leon/icache.vhd
+analyze -f VHDL -library WORK ../leon/dcache.vhd
+analyze -f VHDL -library WORK ../leon/acache.vhd
+analyze -f VHDL -library WORK ../leon/cache.vhd
+analyze -f VHDL -library WORK ../leon/apbmst.vhd
+analyze -f VHDL -library WORK ../leon/ahbstat.vhd
+analyze -f VHDL -library WORK ../leon/ahbtest.vhd
+analyze -f VHDL -library WORK ../leon/ambacomp.vhd
+analyze -f VHDL -library WORK ../leon/ahbarb.vhd
+analyze -f VHDL -library WORK ../leon/lconf.vhd
+analyze -f VHDL -library WORK ../leon/fpulib.vhd
+analyze -f VHDL -library WORK ../leon/fp1eu.vhd
+analyze -f VHDL -library WORK ../leon/ioport.vhd
+analyze -f VHDL -library WORK ../leon/irqctrl.vhd
+analyze -f VHDL -library WORK ../leon/clkgen.vhd
+analyze -f VHDL -library WORK ../leon/mctrl.vhd
+analyze -f VHDL -library WORK ../leon/padlib.vhd
+analyze -f VHDL -library WORK ../leon/regfile.vhd
+analyze -f VHDL -library WORK ../leon/rstgen.vhd
+analyze -f VHDL -library WORK ../leon/timers.vhd
+analyze -f VHDL -library WORK ../leon/uart.vhd
+analyze -f VHDL -library WORK ../leon/iu.vhd
+analyze -f VHDL -library WORK ../leon/proc.vhd
+analyze -f VHDL -library WORK ../leon/wprot.vhd
+analyze -f VHDL -library WORK ../leon/mcore.vhd
+analyze -f VHDL -library WORK ../leon/leon.vhd
+
+
+elaborate leon
+current_design leon
+uniquify
+
+create_clock -name "clk" -period 20 -waveform {   "0" "10.0" } {   "clk" } 
+
+/*
+compile
+
+write -f db -hier leon
+
+report_timing
+*/

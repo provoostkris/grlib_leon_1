@@ -1,0 +1,22 @@
+
+LEON synthesis scripts
+----------------------
+
+Three files are provided:
+
+leon.prj	project file for Synplify/Amplify
+
+leon.dcsh	script for Synopsys DC
+
+leon.fc2	script for Synopsys FPGA-Compiler/FPGA-Express
+
+
+The synopsys scripts are just templates to show which order the
+files should be analysed. Edit them to reflect your desired target
+technology and timing constraints.
+
+NOTE: all LEON files are read from the standard leon source
+directory (../leon), MAKE SURE ../leon/device.vhd REFLECTS YOUR
+TARGET SETTINGS!!!
+
+Jiri.
